@@ -1,6 +1,4 @@
 
-import styles from './MovieCard.module.css';
-
 interface MovieCardProps {
   title: string;
   posterPath: string;
@@ -14,10 +12,10 @@ export default function MovieCard({ title, posterPath, overview, releaseDate }: 
     : '/no-image.png'; // fallback
 
   return (
-    <div className={styles.card}>
-      <img src={imageUrl} alt={title} className={styles.poster} />
-      <div className={styles.info}>
-        <h3 className={styles.title}>{title}</h3>
+    <div className='w-[250px] border border-[#333] rounded-[10px] overflow-hidden bg-[#111] text-white'>
+      <img src={imageUrl} alt={title} className='w-full h-[375px] object-cover' />
+      <div className='p-2.5'>
+        <h3 className='m-[px]'> </h3>
         <p><strong>Release:</strong> {releaseDate}</p>
         <p>{overview}</p>
       </div>
