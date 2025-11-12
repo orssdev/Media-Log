@@ -8,7 +8,6 @@ export async function GET(req: NextRequest) {
     if (!query) {
         return NextResponse.json({ error: 'Movie names is required' }, { status: 400 });
     }
-    console.log(TMDB_API_KEY)
     try {
         const res = await fetch(
             `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`
