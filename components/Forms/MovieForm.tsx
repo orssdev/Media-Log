@@ -1,17 +1,41 @@
 'use client'
 
+import { getPopularMovies } from "@/lib/tmdb";
+import { useEffect } from "react";
+
 interface MovieFormProps {
     query: string;
     setQuery: (value: string) => void;
+    setMovies: (movies: any[]) => void;
+    setLoading: (loading: boolean) => void;
+    setError: (error: string) => void;
     onSearch: (query: string) => void;
 }
 
-export default function MovieForm({ query, setQuery, onSearch }: MovieFormProps) {
+export default function MovieForm({ query, setQuery, setMovies, setLoading, setError, onSearch }: MovieFormProps) {
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         onSearch(query)
     }
+
+    useEffect(() => {
+        if (query === '') {
+            const fetchPopular = async () => {
+                setError('');
+                try {
+                    const results = await getPopularMovies();
+                    setMovies(results);
+                } catch (err: any) {
+                    setError(err.message || 'Error fetching popular movies');
+                } finally {
+                    setLoading(false);
+                }
+            }
+
+            fetchPopular();
+        }
+    }, [query]);
 
     return (
         <form onSubmit={handleSubmit}>
