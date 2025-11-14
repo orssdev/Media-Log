@@ -2,8 +2,8 @@
 
 import MovieForm from "@/components/Forms/MovieForm";
 import MovieCard from "@/components/MovieCard";
-import { getPopularMovies, searchMovies } from "@/lib/tmdb";
-import { useEffect, useState } from "react";
+import { searchMovies } from "@/lib/tmdb";
+import { useState } from "react";
 
 export default function AddMovie() {
     const [query, setQuery] = useState('')
