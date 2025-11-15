@@ -35,3 +35,7 @@ body {
 .page {
   @apply bg-linear-to-b to-[#210304] from-[#000000] w-full min-h-screen pt-(--hh);
 }
+
+.center-div {
+  @apply flex justify-center items-center
+}
