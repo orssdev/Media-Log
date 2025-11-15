@@ -22,7 +22,7 @@ export default function MediaCounter(prop: Props) {
                 <h1 className="text-[56px]">{prop.media}</h1>
                 <h2 className="text-[48px]">{prop.count}</h2>
             </span>
-            <Button onClick={() => router.push(prop.route + '/add')}></Button>
+            <Button className="w-[200px] h-[50px] text-[36px]" onClick={() => router.push(prop.route + '/add')} children={"Add"}></Button>
         </div>  
     );
 }

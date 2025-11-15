@@ -1,14 +1,16 @@
 interface Props {
-    onClick?: () => void
+    className?: string;
+    onClick?: () => void;
+    children?: React.ReactNode
 }
 
-export default function Button(prop: Props) {
+export default function Button({ className, onClick, children }: Props) {
     return (
         <button 
-            className="bg-(--color2) w-[200px] h-[50px] text-[36px] font-e rounded-2xl hover:bg-black hover:border-[#8b0000] hover:text-white border transition-colors duration-200 cursor-pointer"
-            onClick={prop.onClick}
+            className={`${className} bg-(--color2) font-e rounded-2xl hover:bg-black hover:border-[#8b0000] hover:text-white border transition-colors duration-200 cursor-pointer`}
+            onClick={onClick}
         >
-            Add
+            {children}
         </button>
     );
 }
