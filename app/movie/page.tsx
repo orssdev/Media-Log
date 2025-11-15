@@ -1,5 +1,7 @@
 export default function Movie() {
     return (
-        <h1>Movie</h1>
+        <div className="page">
+            <h1>Movie</h1>
+        </div>
     );
 }

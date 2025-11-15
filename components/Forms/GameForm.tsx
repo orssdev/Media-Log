@@ -1,9 +1,9 @@
 'use client'
 
-import { useSearchParams, useRouter} from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function MovieForm() {
+export default function GameForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const initialQuery = searchParams.get("q") || "";
@@ -12,13 +12,11 @@ export default function MovieForm() {
     useEffect(() => {
         setQuery(initialQuery);
     }, [initialQuery]);
-    
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        router.push(`/movie/add?q=${encodeURIComponent(query)}`);
+        router.push(`/game/add?q=${encodeURIComponent(query)}`);
     };
-
-    
 
     return (
         <form onSubmit={handleSubmit}>
@@ -26,7 +24,7 @@ export default function MovieForm() {
                 type="text"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
-                placeholder="search for movie"
+                placeholder="search for game"
                 className="pl-2.5 text-[24px] mr-2.5 border border-(--color2) w-[600px]"
             />
             <button type="submit" className="bg-(--color2) px-5 py-2">Search</button>
