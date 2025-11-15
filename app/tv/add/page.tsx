@@ -9,12 +9,14 @@ export default async function AddTVShow({searchParams}: {searchParams: {q?: stri
 
 
     return (
-        <div className="w-full min-h-[800px] h-auto bg-(--color1) bg-linear-to-b from-[#000000] to-[#210304] flex flex-col items-center py-[50px] gap-10 font-e">
-            <TVShowForm />
-            <div className="flex flex-row overflow-x-auto gap-[25px] px-[25px] w-full">
-                {shows.map(show => (
-                    <TVShowCard key={show.id} show={show}/>
-                ))}
+        <div className="page">
+            <div className="w-full min-h-[800px] h-auto bg-(--color1) bg-linear-to-b from-[#000000] to-[#210304] flex flex-col items-center py-[50px] gap-10 font-e">
+                <TVShowForm />
+                <div className="flex flex-row overflow-x-auto gap-[25px] px-[25px] w-full">
+                    {shows.map(show => (
+                        <TVShowCard key={show.id} show={show}/>
+                    ))}
+                </div>
             </div>
         </div>
     );

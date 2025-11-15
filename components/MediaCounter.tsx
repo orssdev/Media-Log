@@ -17,7 +17,7 @@ export default function MediaCounter(prop: Props) {
     }
 
     return (
-        <div className="w-(--MediaCounter) h-full flex flex-col justify-center items-center mt-[100px] gap-[50px] font-bs">
+        <div className="w-(--mc) h-(--mc) flex flex-col justify-center items-center gap-[50px] font-bs">
             <span className="flex flex-col justify-center items-center gap-[25px] cursor-pointer " onClick={handleClick}>
                 <h1 className="text-[56px]">{prop.media}</h1>
                 <h2 className="text-[48px]">{prop.count}</h2>

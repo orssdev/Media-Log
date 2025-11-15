@@ -1,5 +1,7 @@
 export default function TVShow() {
     return (
-        <h1>TV Show</h1>
+        <div className="page">
+            <h1>TV Show</h1>
+        </div>
     );
 }
