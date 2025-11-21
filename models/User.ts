@@ -12,7 +12,7 @@ const UserSchema = new Schema<IUser>(
         email: String,
         password: String,
   },
-  { timestamps: true, collection: 'users' }
+  { collection: 'users', versionKey: false }
 );
 
 export default (mongoose.models.User as Model<IUser>) ||
