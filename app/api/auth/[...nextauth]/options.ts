@@ -19,9 +19,9 @@ export const options: NextAuthOptions = {
                     credentials?.username === user.name &&
                     credentials?.password === user.password
                 ) {
-                return user;
-                }
-                return null;
+                    return user;
+                    }
+                    return null;
             },
         })
     ]
