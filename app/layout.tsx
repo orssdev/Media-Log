@@ -3,7 +3,7 @@ import { Electrolize, Bungee_Shade} from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Provider from "./Provider";
+import Provider from "./provider";
 
 const electrolize = Electrolize({ 
   variable: "--font-electrolize",
@@ -16,16 +16,6 @@ const bungeeShade = Bungee_Shade({
   subsets: ['latin'], 
   weight: '400' 
 });
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Media Log",
