@@ -15,7 +15,7 @@ export default function TVShowForm() {
     
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        router.push(`/tv/add?q=${encodeURIComponent(query)}`);
+        router.push(`/tv/search?q=${encodeURIComponent(query)}`);
     };
 
     return (
@@ -24,7 +24,7 @@ export default function TVShowForm() {
                 type="text"
                 value={query}
                 onChange={e => setQuery(e.target.value)}
-                placeholder="search for movie"
+                placeholder="search for tv show"
                 className="pl-2.5 text-[24px] mr-2.5 border border-(--color2) w-[600px]"
             />
             <button type="submit" className="bg-(--color2) px-5 py-2">Search</button>

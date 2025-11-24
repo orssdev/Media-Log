@@ -9,7 +9,7 @@ export default async function AddMovie({searchParams}: {searchParams: {q?: strin
 
     return (
         <div className="page">
-            <div className="flex flex-col items-center py-[50px] gap-10 font-e">
+            <div className="flex flex-col items-center py-[25px] gap-10 font-e">
                 <MovieForm />
                 <div className="flex flex-row overflow-x-auto gap-[25px] px-[25px] w-full">
                     {movies.map(movie => (
