@@ -1,7 +1,7 @@
 export default function TVShow() {
     return (
-        <div className="page">
-            <h1>TV Show</h1>
+        <div className="page center-div">
+            <h1>Tv Show logs coming soon</h1>
         </div>
     );
 }

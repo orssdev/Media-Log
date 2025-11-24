@@ -18,6 +18,14 @@ export async function getPopularMovies() {
   return data.results;
 }
 
+export async function getMovie(id: string) {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${TMDB_API_KEY}`)
+
+  if (!res.ok) throw new Error('Failed to fetch movie');
+  const data = await res.json();
+  return data
+}
+
 export async function searchTvShows(query: string) {
   const res = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(query)}`);
 
